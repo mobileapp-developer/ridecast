@@ -5,7 +5,7 @@ import { ActivityIndicator, Animated, Easing, Platform, SafeAreaView, StyleSheet
 import MapView, { Marker } from "react-native-maps";
 import { calcSuitability, fetchCurrentWeather, WeatherNow } from "../../shared/weatherApi";
 
-type Coordinates = {
+export type Coordinates = {
   latitude: number;
   longitude: number
 };
@@ -39,14 +39,8 @@ export default function TodayScreen() {
         const c = { latitude: loc.coords.latitude, longitude: loc.coords.longitude };
         setCoords(c);
 
-        const apiKey = process.env.EXPO_PUBLIC_OPENWEATHER_API_KEY || "";
-        if (!apiKey) {
-          setErrorMsg("Missing OpenWeather API key. Set EXPO_PUBLIC_OPENWEATHER_API_KEY.");
-          setLoading(false);
-          return;
-        }
-        const w = await fetchCurrentWeather(c.latitude, c.longitude);
-        setWeather(w);
+  const w = await fetchCurrentWeather(c.latitude, c.longitude);
+  setWeather(w);
       } catch (e: any) {
         setErrorMsg(e?.message ?? "Failed to fetch location/weather");
       } finally {
@@ -98,8 +92,7 @@ export default function TodayScreen() {
             <View style={{ flex: 1 }}>
               <Text style={styles.tempText}>{weather.tempC}°C</Text>
               <View style={styles.condRow}>
-                <Ionicons
-                  name={
+                <Ionicons name={
                     weather.condition === "sunny"
                       ? "sunny-outline"
                       : weather.condition === "cloudy"
