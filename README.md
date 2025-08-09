@@ -1,50 +1,72 @@
-# Welcome to your Expo app 👋
+# RideCast
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+RideCast — це сучасний мобільний застосунок для велосипедистів, створений на базі Expo, React Native та TypeScript. Додаток дозволяє відстежувати погодні умови, планувати поїздки та зберігати історію своїх велопрогулянок.
 
-## Get started
+## Основні можливості
 
-1. Install dependencies
+- **Поточна погода**: показує температуру, стан неба, вітер та "ride score" для вашої локації.
+- **7-денний прогноз**: детальний прогноз з оцінкою придатності для поїздок на кожен день.
+- **Історія поїздок**: зберігає ваші поїздки з погодними умовами та тривалістю.
+- **Карта**: інтеграція з react-native-maps для відображення вашої позиції.
+- **Анімації та сучасний UI**: плавні переходи, адаптивний дизайн.
+
+## Встановлення та запуск
+
+1. Встановіть залежності:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+2. Додайте API-ключ OpenWeatherMap (Expo використовує змінні `EXPO_PUBLIC_*`):
+
+   - Створіть файл `.env` у корені проєкту:
+
+     ```
+     EXPO_PUBLIC_OPENWEATHER_API_KEY=ВАШ_КЛЮЧ
+     ```
+
+   - Або задайте змінну середовища у вашій оболонці перед запуском.
+
+3. Запустіть застосунок на Android:
 
    ```bash
-   npx expo start
+   npm run android
    ```
 
-In the output, you'll find options to open the app in a
+   або на iOS:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   npm run ios
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   або у веб-браузері:
 
-## Get a fresh project
+   ```bash
+   npm run web
+   ```
 
-When you're ready, run:
+## Використані бібліотеки
 
-```bash
-npm run reset-project
-```
+- `expo`, `expo-router`, `expo-location`, `expo-splash-screen`, `expo-status-bar`
+- `react-native-maps`, `@react-native-async-storage/async-storage`
+- `victory-native` (графіки)
+- `@expo/vector-icons`
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Структура проєкту
 
-## Learn more
+- `app/` — основні екрани та навігація
+- `shared/` — спільні модулі (API, типи)
+- `assets/` — зображення та шрифти
 
-To learn more about developing your project with Expo, look at the following resources:
+## Поради щодо розвитку
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+- Додати локалізацію (i18n)
+- Додати unit- та e2e-тести
+- Покращити accessibility
+- Додати push-сповіщення
+- Додати аналітику
 
-## Join the community
+---
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Зворотній зв'язок та ідеї вітаються!
