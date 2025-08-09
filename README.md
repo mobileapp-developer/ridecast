@@ -50,7 +50,6 @@ RideCast — це сучасний мобільний застосунок дл�
 
 - `expo`, `expo-router`, `expo-location`, `expo-splash-screen`, `expo-status-bar`
 - `react-native-maps`, `@react-native-async-storage/async-storage`
-- `victory-native` (графіки)
 - `@expo/vector-icons`
 
 ## Структура проєкту
